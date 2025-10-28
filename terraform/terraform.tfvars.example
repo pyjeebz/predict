@@ -1,0 +1,16 @@
+aws_region      = "us-east-1"
+project_name    = "saleor-predictive-scaling"
+environment     = "dev"
+instance_type   = "t3.medium"
+min_size        = 1
+max_size        = 10
+desired_capacity = 2
+
+# Database configuration
+db_instance_class = "db.t3.medium"
+db_name          = "saleor"
+db_username      = "saleor_admin"
+# Set db_password via environment variable: TF_VAR_db_password
+
+# SSH Key - Create this in AWS first
+# key_pair_name = "your-key-pair-name"
