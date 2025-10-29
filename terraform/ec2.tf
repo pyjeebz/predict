@@ -135,6 +135,17 @@ resource "aws_launch_template" "saleor" {
     redis_host  = aws_elasticache_cluster.redis.cache_nodes[0].address
   }))
 
+  block_device_mappings {
+    device_name = "/dev/xvda"
+
+    ebs {
+      volume_size           = 20
+      volume_type           = "gp3"
+      delete_on_termination = true
+      encrypted             = true
+    }
+  }
+
   monitoring {
     enabled = true
   }
